@@ -2,6 +2,10 @@ FROM centos:7
 
 WORKDIR /code
 
+RUN echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+RUN sed -i '1s/^/nameserver 8.8.8.8\n/' /etc/resolv.conf
+
 RUN yum install epel-release python36  fontconfig wqy-microhei-fonts -y
 
 RUN python3.6 -m ensurepip --default-pip
