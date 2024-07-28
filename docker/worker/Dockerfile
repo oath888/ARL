@@ -2,7 +2,7 @@ FROM centos:7
 
 WORKDIR /code
 
-COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+COPY ./CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 
 RUN yum install epel-release python36  fontconfig wqy-microhei-fonts -y
 
