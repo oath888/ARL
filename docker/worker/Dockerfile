@@ -2,6 +2,12 @@ FROM centos:7
 
 WORKDIR /code
 
+RUN sed -e 's|^mirrorlist=|#mirrorlist=|g' \  
+     -i.bak \  
+     /etc/yum.repos.d/CentOS-*.repo \  
+     && yum makecache fast \  
+     && yum clean all
+     
 RUN yum install epel-release python36  fontconfig wqy-microhei-fonts -y
 
 RUN python3.6 -m ensurepip --default-pip
