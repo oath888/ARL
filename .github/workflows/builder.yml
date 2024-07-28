@@ -47,7 +47,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Login Registry
         run: |
-          docker login -u "{{SECRET.DOCKER_USER}}" -p "{{SECRET.DOCKER_PASSWORD}}"
+          docker login -u "{{SECRETS.DOCKER_USERNAME}}" -p "{{SECRETS.DOCKER_PASSWORD}}"
 
       # Runs a set of commands using the runners shell
       - name: Build Docker image
